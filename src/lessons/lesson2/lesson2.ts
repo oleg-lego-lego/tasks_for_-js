@@ -67,6 +67,24 @@ counter();
 // reset: установить счетчик в 0;
 // set: установить счетчик в заданное значение;
 
+function Counter(startNumber: number) {
+    let count = startNumber
+    return {
+        increase: () => ++count,
+        decrease: () => --count,
+        set: () => startNumber,
+        reset: () => count = 0,
+    }
+}
+
+let count = Counter(12)
+console.log(count.increase())
+console.log(count.decrease())
+console.log(count.set())
+console.log(count.reset())
+console.log(count.increase())
+
+
 // Task 04*
 // Реализовать функцию superSum которая принимает число в качестве аргумента, которое указывает на количество слагаемых
 // и что бы корректно работали следующие вызовы:
