@@ -42,6 +42,23 @@ console.log(sum(334)(23))
 // counter2(); // 1
 // counter(); // 3
 
+const makeCounter = () => {
+    let counter = 1
+    return () => {
+        console.log(counter++)
+    }
+}
+
+const counter = makeCounter();
+counter();
+counter();
+
+const counter2 = makeCounter();
+counter2();
+counter();
+
+
+
 // Task 03
 // Переписать функцию из Task 02 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
 // и возвращала следующий объект методов:
