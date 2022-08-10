@@ -95,6 +95,24 @@ console.log(count.increase())
 // 5) superSum(3)(2,5)(3) //10
 // 6) superSum(3)(2,5)(3,9) //10
 
+function superSum(number: number) {
+        let res = number;
+
+        function foo(value2: number) {
+            res += value2;
+            return foo;
+        }
+
+        foo.toString = function() {
+            return res;
+        };
+
+        return foo;
+    }
+
+
+alert(superSum(12)(14)(-12))
+
 // P.S. типизируйте только аргументы, а при вызове функции используйте @ts-ignore
 
 // Task 05
